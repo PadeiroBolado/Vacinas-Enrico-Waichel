@@ -2,6 +2,7 @@ package controller;
 
 import java.util.List;
 
+import exception.VacinasException;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
@@ -13,9 +14,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import model.entity.Pessoa;
 import service.PessoaService;
-import exception.VacinasException;
 
-@Path("/pessoa")	
+@Path("/pessoa")
 public class PessoaController {
 	
 	private PessoaService service = new PessoaService();
@@ -23,14 +23,14 @@ public class PessoaController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Pessoa salvar(Pessoa novaPessoa) throws VacinasException {
+	public Pessoa salvar(Pessoa novaPessoa) throws VacinasException{
 		 return service.salvar(novaPessoa);
 	}
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public boolean atualizar(Pessoa pessoaEditada) throws VacinasException {
+	@Produces(MediaType.TEXT_PLAIN)
+	public boolean atualizar(Pessoa pessoaEditada) throws VacinasException{
 		 return service.atualizar(pessoaEditada);
 	}
 	
@@ -51,12 +51,4 @@ public class PessoaController {
 	public List<Pessoa> consultarTodas(){
 		 return service.consultarTodas();
 	}
-	
-	//Apenas para testes
-//	@GET
-//	@Path("/sortear")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public ArrayList<Carta> sortear(){
-//		return service.sortearSeisCartas();
-//	}
 }
