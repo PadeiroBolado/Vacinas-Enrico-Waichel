@@ -9,8 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.entity.Pessoa;
-import model.repository.Banco;
-import model.repository.BaseRepository;
+
 
 public class PessoaRepository implements BaseRepository<Pessoa> {
 

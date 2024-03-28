@@ -16,7 +16,7 @@ public class Banco {
 //	@Resource(name="jdbc/sistema")
 //	private static DataSource ds;
 	
-	private static final String NAME_DATASOURCE = "SenacDS";
+	private static final String NAME_DATASOURCE = "dbvacinasenrico";
 	
 	
 	public static Connection getConnection(){

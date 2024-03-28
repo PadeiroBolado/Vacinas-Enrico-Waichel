@@ -2,8 +2,11 @@ package service;
 
 import java.util.List;
 
+import exception.VacinasException;
 import model.entity.Pessoa;
 import model.repository.PessoaRepository;
+import model.entity.Vacinacao;
+import model.repository.VacinacaoRepository;
 
 public class PessoaService {
 	private PessoaRepository repository = new PessoaRepository();
@@ -16,8 +19,8 @@ public class PessoaService {
 		return repository.alterar(pessoaEditada);
 	}
 
-	public boolean excluir(int id) {
-		//TODO pode excluir jogador que já possui partidas?
+	public boolean excluir(int id) throws VacinasException {
+		
 		return repository.excluir(id);
 	}
 
