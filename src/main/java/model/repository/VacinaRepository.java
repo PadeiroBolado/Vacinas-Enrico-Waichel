@@ -10,8 +10,6 @@ import java.util.ArrayList;
 
 import model.entity.Pessoa;
 import model.entity.Vacina;
-import model.repository.Banco;
-import model.repository.BaseRepository;
 
 public class VacinaRepository implements BaseRepository<Vacina> {
 
